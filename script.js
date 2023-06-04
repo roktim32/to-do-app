@@ -30,6 +30,13 @@ listContainer.addEventListener(
   },
   false
 );
+inputBox.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    // 13 is the keycode for "Enter"
+    event.preventDefault();
+    addTask();
+  }
+});
 
 function saveData() {
   localStorage.setItem("data", listContainer.innerHTML);
